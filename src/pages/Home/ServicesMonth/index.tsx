@@ -98,9 +98,7 @@ function ServicesMonth() {
       const { infoLoadData, infoUpdateLabel } = resultData;
 
       mfeModalRef?.current?.contentWindow?.postMessage(infoLoadData, '*');
-      setTimeout(() => {
-        mfeModalRef?.current?.contentWindow?.postMessage(infoUpdateLabel, '*');
-      }, 100);
+      mfeModalRef?.current?.contentWindow?.postMessage(infoUpdateLabel, '*');
     }
   }, [])
 
@@ -116,10 +114,8 @@ function ServicesMonth() {
             break;
   
           case 'mfe-loaded': {
-            setTimeout(() => {
-              const newData = moment();    
-              onMfeHome(newData.format('MM'), newData.format('yyyy'));
-            }, 100);
+            const newData = moment();    
+            onMfeHome(newData.format('MM'), newData.format('yyyy'));
             break;
           }
     
@@ -131,7 +127,6 @@ function ServicesMonth() {
             handleOpenDetails();
 
             /* Updating the modal's maxHeight, according to the screen height */
-            setTimeout(() => {
               const element = document.getElementById('modal-id');
               if (element) {
                 setMaxHeightModal(
@@ -142,7 +137,6 @@ function ServicesMonth() {
                   - 32 // padding - modal
                 );
               }
-            }, 100);
 
             break;
           }
@@ -159,10 +153,8 @@ function ServicesMonth() {
             break;
   
           case 'mfe-loaded': {
-            setTimeout(() => {
-              const newData = moment(inputValue);    
-              onMfeModal(newData.format('MM'), newData.format('yyyy'));
-            }, 100);
+            const newData = moment(inputValue);    
+            onMfeModal(newData.format('MM'), newData.format('yyyy'));
             break;
           }
     
@@ -221,11 +213,6 @@ function ServicesMonth() {
         title="Serviços do Mês"
         style={{ width: '100%', height: heightHome, marginBottom: 20 }}
         frameBorder="0"
-        aria-hidden="true"
-        srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-        onLoad={() => setTimeout(() => {
-          mfeRef?.current?.removeAttribute('srcDoc');
-        }, 200)}
       />
       <Modal
         open={openDetails}
@@ -244,11 +231,6 @@ function ServicesMonth() {
             title="Serviços do Mês"
             style={{ width: '100%', height, maxHeight: maxHeightModal }}
             frameBorder="0"
-            aria-hidden="true"
-            srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-            onLoad={() => setTimeout(() => {
-              mfeModalRef?.current?.removeAttribute('srcDoc');
-            }, 200)}
           />
           <div style={styles.buttonHolder}>
             <Button 

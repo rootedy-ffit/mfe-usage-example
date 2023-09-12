@@ -11,9 +11,7 @@ function CollectivePerformanceChart() {
 
       const data = { event: 'loadData', info: resultData.data }
 
-      setTimeout(() => {    
-        mfeRef?.current?.contentWindow?.postMessage(data, '*');
-      }, 100);
+      mfeRef?.current?.contentWindow?.postMessage(data, '*');
     } catch (error) {
       alert(`MonthlyLossRatioChart :: ERROR ==> ${error}`);
     }

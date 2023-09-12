@@ -8,12 +8,9 @@ function ViewPdf() {
   const params = useParams();
   const mfeRef = useRef<any>();
 
-  let fileData = {};
-  if (params.id === '1') {
-    fileData = {
-      filename: 'Ontology',
-      file: 'https://queksiewkhoon.tripod.com/ontology_01.pdf',
-    }
+  let fileData = {
+    filename: 'Example of PDF',
+    file: 'https://queksiewkhoon.tripod.com/ontology_01.pdf',
   }
 
   const receiver = useCallback((e: any) => {
@@ -28,10 +25,8 @@ function ViewPdf() {
           },
         }
 
-        setTimeout(() => {
-          /* Sending event to mfe from pdf */
-          mfeRef?.current?.contentWindow?.postMessage(data, '*');
-        }, 100);
+        /* Sending event to mfe from pdf */
+        mfeRef?.current?.contentWindow?.postMessage(data, '*');
         break;
       }
     

@@ -52,10 +52,8 @@ function AssistanceCostPercentageChart() {
       }
 
       const infoLoadData = { event: 'loadData', info: infoData };
-      setTimeout(() => {
-        /* Sending event to mfe from AssistanceCostPercentageChart */
-        mfeRef?.current?.contentWindow?.postMessage(infoLoadData, '*');
-      }, 100);
+      /* Sending event to mfe from AssistanceCostPercentageChart */
+      mfeRef?.current?.contentWindow?.postMessage(infoLoadData, '*');
     } catch (error) {
       alert(`AssistanceCostPercentageChart :: ERROR ==> ${error}`);
     }
