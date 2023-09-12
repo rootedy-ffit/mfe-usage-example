@@ -46,14 +46,14 @@ function MedicalProductionReport() {
         <Button 
           variant='contained'
           style={styles.buttonContent}
-          onClick={() => navigate('/pdf/1')}
+          onClick={() => navigate('/pdf/CONTRACHEQUE')}
         >
           CONTRACHEQUE
         </Button>
         <Button
           variant='contained'
           style={styles.buttonContent}
-          onClick={() => navigate('/pdf/2')}
+          onClick={() => navigate('/pdf/DEMONSTRATIVO')}
         >
           DEMONSTRATIVO
         </Button>

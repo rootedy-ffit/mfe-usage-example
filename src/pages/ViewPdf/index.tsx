@@ -1,14 +1,15 @@
 import React, { CSSProperties, useRef, useCallback, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Structure } from '../../components/Structure';
 import { pdf } from './pdf64';
 
 function ViewPdf() {
   const navigate = useNavigate();
+  const params = useParams();
   const mfeRef = useRef<any>();
 
   let fileData = {
-    filename: 'Example of PDF',
+    filename: params.id || '',
     file: 'https://queksiewkhoon.tripod.com/ontology_01.pdf',
   }
 
