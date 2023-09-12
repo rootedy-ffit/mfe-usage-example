@@ -103,69 +103,65 @@ function ServicesMonth() {
   }, [])
 
   const receiver = useCallback((e: any) => {
-    /* Checking if the event that was returned is for mfe, when there is more than one mfe on the same screen that returns the same events */
-    if (e.data.mfeCode === '@ffit/servicos-mes') {
+    /* Checking ids for same mfes on the same screen */
+    if (e.data.mfeId === 'service__1') {
+      switch (e.data?.event) {
+        case 'updateSize':
+          setHeightHome(e.data.info.height);
+          break;
 
-      /* Checking ids for same mfes on the same screen */
-      if (e.data.mfeId === 'service__1') {
-        switch (e.data?.event) {
-          case 'updateSize':
-            setHeightHome(e.data.info.height);
-            break;
+        case 'mfe-loaded': {
+          const newData = moment();    
+          onMfeHome(newData.format('MM'), newData.format('yyyy'));
+          break;
+        }
   
-          case 'mfe-loaded': {
-            const newData = moment();    
-            onMfeHome(newData.format('MM'), newData.format('yyyy'));
-            break;
-          }
-    
-          case 'requestDate':
-            handleOpen();
-            break;        
-            
-          case 'click': {
-            handleOpenDetails();
+        case 'requestDate':
+          handleOpen();
+          break;        
+          
+        case 'click': {
+          handleOpenDetails();
 
-            /* Updating the modal's maxHeight, according to the screen height */
-              const element = document.getElementById('modal-id');
-              if (element) {
-                setMaxHeightModal(
-                  element.clientHeight
-                  - 32 // title
-                  - 25 // divider
-                  - 48 // button - ok
-                  - 32 // padding - modal
-                );
-              }
+          /* Updating the modal's maxHeight, according to the screen height */
+            const element = document.getElementById('modal-id');
+            if (element) {
+              setMaxHeightModal(
+                element.clientHeight
+                - 32 // title
+                - 25 // divider
+                - 48 // button - ok
+                - 32 // padding - modal
+              );
+            }
 
-            break;
-          }
-        
-          default:
-            break;
-        } 
-      }
+          break;
+        }
+      
+        default:
+          break;
+      } 
+    }
 
-      if (e.data.mfeId === 'service__2') {
-        switch (e.data?.event) {
-          case 'updateSize':
-            setHeight(e.data.info.height);
-            break;
+    if (e.data.mfeId === 'service__2') {
+      switch (e.data?.event) {
+        case 'updateSize':
+          setHeight(e.data.info.height);
+          break;
+
+        case 'mfe-loaded': {
+          const newData = moment(inputValue);    
+          onMfeModal(newData.format('MM'), newData.format('yyyy'));
+          break;
+        }
   
-          case 'mfe-loaded': {
-            const newData = moment(inputValue);    
-            onMfeModal(newData.format('MM'), newData.format('yyyy'));
-            break;
-          }
-    
-          case 'requestDate':
-            handleOpen();
-            break;
-        
-          default:
-            break;
-        } 
-      }
+        case 'requestDate':
+          handleOpen();
+          break;
+      
+        default:
+          break;
+      } 
     }
   }, [handleOpen, inputValue, onMfeHome, onMfeModal]);
 
