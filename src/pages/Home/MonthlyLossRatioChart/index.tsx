@@ -46,7 +46,6 @@ function MonthlyLossRatioChart() {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     displayAccumulated: 'true',
     displaySubtitles: 'true',
-    simpleHeader: 'false',
     hideSeeMoreButton: 'true',
     outlined: 'true',
     title: 'Índice de Sinistralidade',

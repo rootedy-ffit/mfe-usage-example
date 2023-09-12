@@ -42,7 +42,7 @@ function Login() {
   /* parameters used to load mfe login */
   const queryStringObj = {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
-    checkboxRemember: 'false',
+    outlined: 'true',
     hideCreateAcc: 'true',
     hideForgetPass: 'true',
     type: 'crm',

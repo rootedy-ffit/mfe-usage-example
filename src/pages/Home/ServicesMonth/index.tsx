@@ -178,16 +178,10 @@ function ServicesMonth() {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     id: 'service__1',
     graphTitle: 'Serviços do Mês',
-    hideGraph: 'false',
     hideDetail: 'true',
     hideStatementsButton: 'true',
-    hideDatePicker: 'false',
     hideInfo: 'true',
-    simpleHeader: 'false',
-    enableServiceDetails: 'false',
-    hideSubtitlePercentage: 'false',
     outlined: 'true',
-    graphColorTheme: 'false',
     externalDatePicker: 'true',
   };
 
