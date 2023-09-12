@@ -6,7 +6,7 @@ function Forms() {
 
   /* parameters used to load mp form viewer */
   const queryStringObj = {
-    'ffit-key': 'k6Q4yijDxm6w8QEzIZ1P9Bh8VJswZWXv',
+    'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     serverHost: 'https://mfe.ffit.com.br/api-forms/v1',
     systemKey: 'adec0dc1-dbb8-4353-8080-f4067f8f8521', 
     userId: 'João',

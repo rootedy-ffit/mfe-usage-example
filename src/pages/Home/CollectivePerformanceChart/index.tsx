@@ -41,7 +41,7 @@ function CollectivePerformanceChart() {
   }, [receiver]);
 
   const queryStringObj = {
-    'ffit-key': 'k6Q4yijDxm6w8QEzIZ1P9Bh8VJswZWXv',
+    'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     simpleHeader: 'false',
     outlined: 'true',
     title: 'Performance Coletiva',

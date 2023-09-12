@@ -188,7 +188,7 @@ function ServicesMonth() {
   /* Parameters used to load mfe servicesOfTheMonth */
   /* Separating by ids, because there is more than one mfe on the screen */
   const queryStringObj = {
-    'ffit-key': 'k6Q4yijDxm6w8QEzIZ1P9Bh8VJswZWXv',
+    'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     id: 'service__1',
     graphTitle: 'Serviços do Mês',
     hideGraph: 'false',

@@ -56,7 +56,7 @@ function ViewPdf() {
 
   /* parameters used to load mfe viewer pdf */
   const queryStringObj = {
-    'ffit-key': 'k6Q4yijDxm6w8QEzIZ1P9Bh8VJswZWXv',
+    'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     ...fileData,
     buttonGoBackMobile: 'false',
     buttonDownloadMobile: 'true',
