@@ -38,6 +38,7 @@ function MedicalProductionReport() {
               textField: {
                 size: 'small',
                 fullWidth: true,
+                variant: 'filled',
               },
             }}
           />
