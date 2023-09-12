@@ -12,9 +12,6 @@ function Forms() {
     userId: 'João',
   };
 
-  /* `The `URLSearchParams` constructor takes an object as an argument and converts it into a 
-  query string format. The `toString()` method is then called on the `URLSearchParams` object to 
-  return the query string representation of the object. */
   const queryString = new URLSearchParams(queryStringObj).toString();
 
   return (
@@ -22,23 +19,12 @@ function Forms() {
       <div style={styles.mfeHolder}>
         <div>Formulários</div>
         <div style={styles.mfeContainer}>
-          {/* The `<iframe>` element is used to embed another HTML document within the
-          current document. In this case, it is used to embed the login page from
-          the URL `https://mfe.ffit.com.br/mfe/mp-visualizador-de-formulario` into the 
-          current page. Using the constructed URL QueryStringParams. */}
           <iframe
             ref={mfeRef}
             src={`https://mfe.ffit.com.br/mfe/mp-visualizador-de-formulario?${queryString}`}
             title="Visualizador de Formulários"
             style={{ width: '100%', height: '100%' }}
             frameBorder="0"
-            aria-hidden="true"
-            /* shows 'Carregando...' for 0.2 seconds */
-            srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-            onLoad={() => setTimeout(() => {
-              mfeRef?.current?.removeAttribute('srcDoc');
-            }, 200)}
-            /* -- */
           />
         </div>
       </div>

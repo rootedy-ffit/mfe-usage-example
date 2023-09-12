@@ -186,7 +186,6 @@ function ServicesMonth() {
   }, [receiver]);
 
   /* Parameters used to load mfe servicesOfTheMonth */
-  /* Separating by ids, because there is more than one mfe on the screen */
   const queryStringObj = {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     id: 'service__1',
@@ -204,30 +203,18 @@ function ServicesMonth() {
     externalDatePicker: 'true',
   };
 
-  /* `The `URLSearchParams` constructor takes an object as an argument and converts it into a 
-  query string format. The `toString()` method is then called on the `URLSearchParams` object to 
-  return the query string representation of the object. */
   const queryString = new URLSearchParams(queryStringObj).toString();
 
-  /* Parameters used to load mfe servicesOfTheMonth */
-  /* Separating by ids, because there is more than one mfe on the screen */
   const queryStringModalObj = {
     ...queryStringObj,
     hideDetail: 'false',
     id: 'service__2',
   };
 
-  /* `The `URLSearchParams` constructor takes an object as an argument and converts it into a 
-  query string format. The `toString()` method is then called on the `URLSearchParams` object to 
-  return the query string representation of the object. */
   const queryStringModal = new URLSearchParams(queryStringModalObj).toString();
 
   return (
     <>
-      {/* The `<iframe>` element is used to embed another HTML document within the
-      current document. In this case, it is used to embed the login page from
-      the URL `https://mfe.ffit.com.br/mfe/servicos-mes` into the current page. Using the 
-      constructed URL QueryStringParams. */}
       <iframe
         ref={mfeRef}
         src={`https://mfe.ffit.com.br/mfe/servicos-mes?${queryString}`}

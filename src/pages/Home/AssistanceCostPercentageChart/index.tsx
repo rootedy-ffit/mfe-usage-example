@@ -19,12 +19,6 @@ function AssistanceCostPercentageChart() {
     try {
       let resultLastDate = null;
       
-      /* Is checking if the `newDate`
-      parameter is falsy (undefined, null, or empty). If it is falsy, it makes
-      an API request to `/producoes/ultima-data` to get the last date. The
-      result of this API request is stored in the `resultLastDate` variable.
-      This logic is used to determine whether to use the `newDate` parameter or
-      fetch the last date from the API if `newDate` is not provided. */
       if (!newDate) {
         resultLastDate = await api.post('/producoes/ultima-data');
       }
@@ -120,11 +114,6 @@ function AssistanceCostPercentageChart() {
         title="Custos Assistenciais"
         style={{ width: '100%', height, marginBottom: 20 }}
         frameBorder="0"
-        aria-hidden="true"
-        srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-        onLoad={() => setTimeout(() => {
-          mfeRef?.current?.removeAttribute('srcDoc');
-        }, 200)}
       />
       <DatePickerModal
         // When you close the modal by clicking save, the new date is reloaded

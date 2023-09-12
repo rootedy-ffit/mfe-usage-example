@@ -8,12 +8,6 @@ function ViewPdf() {
   const params = useParams();
   const mfeRef = useRef<any>();
 
-  /* The code block `if (params.id === '1') { ... }` is checking if the value of
-  `params.id` is equal to the string `'1'`. If it is, then it sets the `fileData`
-  object with a `filename` and `file` property. In this case, the `filename` is
-  set to `'Ontology'` and the `file` is set to
-  `'https://queksiewkhoon.tripod.com/ontology_01.pdf'`. This code is likely used
-  to conditionally set the `fileData` based on the value of `params.id`. */
   let fileData = {};
   if (params.id === '1') {
     fileData = {
@@ -67,9 +61,6 @@ function ViewPdf() {
     downloadOnMfe: 'false',
   };
 
-  /* `The `URLSearchParams` constructor takes an object as an argument and converts it into a 
-  query string format. The `toString()` method is then called on the `URLSearchParams` object to 
-  return the query string representation of the object. */
   const queryString = new URLSearchParams(queryStringObj).toString();
 
   return (
@@ -83,21 +74,12 @@ function ViewPdf() {
         </div>
         <div style={styles.mfeContainer}>
           <div style={styles.mfeContent}>
-            {/* The `<iframe>` element is used to embed another HTML document within the
-            current document. In this case, it is used to embed the login page from
-            the URL `https://mfe.ffit.com.br/mfe/visualizacao-de-pdf` into the current page.
-            Using the constructed URL QueryStringParams. */}
             <iframe
               ref={mfeRef}
               src={`https://mfe.ffit.com.br/mfe/visualizacao-de-pdf?${queryString}`}
               title="Visualizador de PDF"
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
-              aria-hidden="true"
-              srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-              onLoad={() => setTimeout(() => {
-                mfeRef?.current.removeAttribute('srcDoc');
-              }, 200)}
             />
           </div>
         </div>

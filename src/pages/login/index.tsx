@@ -48,9 +48,6 @@ function Login() {
     type: 'crm',
   };
 
-  /* `The `URLSearchParams` constructor takes an object as an argument and converts it into a 
-  query string format. The `toString()` method is then called on the `URLSearchParams` object to 
-  return the query string representation of the object. */
   const queryString = new URLSearchParams(queryStringObj).toString();
 
   return (
@@ -62,16 +59,11 @@ function Login() {
         style={styles.logo}
       />
       <div style={styles.loginHolder}>
-        {/* The `<iframe>` element is used to embed another HTML document within the
-        current document. In this case, it is used to embed the login page from
-        the URL `https://mfe.ffit.com.br/mfe/login` into the current page. Using the 
-        constructed URL QueryStringParams. */}
         <iframe
           src={`https://mfe.ffit.com.br/mfe/login?${queryString}`}
           title="Login"
           style={{ width: '100%', height }}
           frameBorder="0"
-          aria-hidden="true"
         />
       </div>
     </div>

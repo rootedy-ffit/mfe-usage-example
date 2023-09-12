@@ -59,11 +59,6 @@ function MonthlyLossRatioChart() {
       title="Índice de Sinistralidade"
       style={{ width: '100%', height: 360 }}
       frameBorder="0"
-      aria-hidden="true"
-      srcDoc={`<!DOCTYPE html><span>Carregando...</span>`}
-      onLoad={() => setTimeout(() => {
-        mfeRef?.current?.removeAttribute('srcDoc');
-      }, 200)}
     />
   );
 }
