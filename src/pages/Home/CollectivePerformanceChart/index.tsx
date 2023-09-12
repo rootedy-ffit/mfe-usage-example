@@ -1,7 +1,8 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useCallback, useRef, useState } from 'react';
 import api from '../../../services/api';
 
 function CollectivePerformanceChart() {
+  const [height, setHeight] = useState(0);
   const mfeRef = useRef<HTMLIFrameElement | null>(null);
   
   const getDataMock = async () => {
@@ -25,6 +26,9 @@ function CollectivePerformanceChart() {
           getDataMock();
           break;
         }
+        case 'updateSize':
+          setHeight(e.data.info.height);
+          break;
       
         default:
           break;
@@ -54,7 +58,7 @@ function CollectivePerformanceChart() {
       ref={mfeRef}
       src={`https://mfe.ffit.com.br/mfe/performance-coletiva?${queryString}`}
       title="Performance Coletiva"
-      style={{ width: '100%', height: 360 }}
+      style={{ width: '100%', height }}
       frameBorder="0"
     />
   );

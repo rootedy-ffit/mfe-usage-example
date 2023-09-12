@@ -1,7 +1,8 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback, useState } from 'react';
 import api from '../../../services/api';
 
 function MonthlyLossRatioChart() {
+  const [height, setHeight] = useState(0);
   const mfeRef = useRef<HTMLIFrameElement | null>(null);
 
   const getDataMock = async () => {
@@ -25,6 +26,9 @@ function MonthlyLossRatioChart() {
           getDataMock();
           break;
         }
+        case 'updateSize':
+          setHeight(e.data.info.height);
+          break;
       
         default:
           break;
@@ -57,7 +61,7 @@ function MonthlyLossRatioChart() {
       ref={mfeRef}
       src={`https://mfe.ffit.com.br/mfe/sinistralidade-card?${queryString}`}
       title="Índice de Sinistralidade"
-      style={{ width: '100%', height: 360 }}
+      style={{ width: '100%', height }}
       frameBorder="0"
     />
   );
