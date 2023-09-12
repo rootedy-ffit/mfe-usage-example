@@ -17,7 +17,7 @@ function ViewPdf() {
     useProxy: 'true',
     hideHeader: 'false',
     showZoomMobile: 'false',
-    downloadOnMfe: 'false',
+    downloadOnMfe: 'true',
   };
 
   const queryString = new URLSearchParams(queryStringObj).toString();
