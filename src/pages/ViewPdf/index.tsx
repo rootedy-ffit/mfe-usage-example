@@ -6,17 +6,6 @@ function ViewPdf() {
   const navigate = useNavigate();
   const params = useParams();
 
-  /* parameters used to load mfe viewer pdf */
-  const queryStringObj = {
-    'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
-    filename: params.id || '',
-    file: 'https://queksiewkhoon.tripod.com/ontology_01.pdf',
-    showThumbnails: 'false',
-    downloadOnMfe: 'true',
-  };
-
-  const queryString = new URLSearchParams(queryStringObj).toString();
-
   return (
     <Structure>
       <div style={styles.mfeHolder}>
