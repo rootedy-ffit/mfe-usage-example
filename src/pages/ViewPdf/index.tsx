@@ -10,7 +10,9 @@ function ViewPdf() {
   const queryStringObj = {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
     filename: params.id || '',
-    file: 'https://queksiewkhoon.tripod.com/ontology_01.pdf',
+    file: params.id === 'CONTRACHEQUE' 
+      ? 'https://mfe.ffit.com.br/public-files/prototypes/PDFs/PFDs/contracheque%20mesAno.pdf'
+      :'https://mfe.ffit.com.br/public-files/prototypes/PDFs/PFDs/demonstrativo%20mesAno.pdf',
     showThumbnails: 'false',
     downloadOnMfe: 'true',
   };
