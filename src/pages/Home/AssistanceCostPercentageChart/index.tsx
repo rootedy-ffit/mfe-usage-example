@@ -102,7 +102,7 @@ function AssistanceCostPercentageChart() {
   const queryString = new URLSearchParams(queryStringObj).toString();
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <iframe
         ref={mfeRef}
         src={`https://mfe.ffit.com.br/mfe/custos-assistenciais?${queryString}`}
