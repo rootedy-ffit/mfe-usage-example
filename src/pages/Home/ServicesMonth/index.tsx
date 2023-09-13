@@ -14,7 +14,6 @@ function ServicesMonth() {
   /* Starting values for the mfe */
   const [height, setHeight] = useState(42);
   const [heightHome, setHeightHome] = useState(42);
-  const [maxHeightModal, setMaxHeightModal] = useState(501);
 
   const [openDetails, setOpenDetails] = useState(false);
   const handleOpenDetails = () => setOpenDetails(true);
@@ -122,19 +121,6 @@ function ServicesMonth() {
           
         case 'click': {
           handleOpenDetails();
-
-          /* Updating the modal's maxHeight, according to the screen height */
-            const element = document.getElementById('modal-id');
-            if (element) {
-              setMaxHeightModal(
-                element.clientHeight
-                - 32 // title
-                - 25 // divider
-                - 48 // button - ok
-                - 32 // padding - modal
-              );
-            }
-
           break;
         }
       
@@ -219,7 +205,7 @@ function ServicesMonth() {
             ref={mfeModalRef}
             src={`https://mfe.ffit.com.br/mfe/servicos-mes?${queryStringModal}`}
             title="Serviços do Mês"
-            style={{ width: '100%', height, maxHeight: maxHeightModal }}
+            style={{ width: '100%', height }}
             frameBorder="0"
           />
           <div style={styles.buttonHolder}>
@@ -287,6 +273,8 @@ const style = {
   boxShadow: 24,
   p: 2,
   borderRadius: 1,
+  display: 'flex',
+  flexDirection: 'column',
 };
 
 export { ServicesMonth };
