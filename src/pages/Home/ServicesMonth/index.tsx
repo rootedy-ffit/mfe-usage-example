@@ -14,7 +14,6 @@ function ServicesMonth() {
   /* Starting values for the mfe */
   const [height, setHeight] = useState(42);
   const [heightHome, setHeightHome] = useState(42);
-  const [maxHeightModal, setMaxHeightModal] = useState(501);
 
   const [openDetails, setOpenDetails] = useState(false);
   const handleOpenDetails = () => setOpenDetails(true);
@@ -104,7 +103,7 @@ function ServicesMonth() {
 
   const receiver = useCallback((e: any) => {
     /* Checking ids for same mfes on the same screen */
-    if (e.data.mfeId === 'service__1') {
+    if (e.data.mfeCode === '@ffit/servicos-mes') {
       switch (e.data?.event) {
         case 'updateSize':
           setHeightHome(e.data.info.height);
@@ -122,19 +121,6 @@ function ServicesMonth() {
           
         case 'click': {
           handleOpenDetails();
-
-          /* Updating the modal's maxHeight, according to the screen height */
-            const element = document.getElementById('modal-id');
-            if (element) {
-              setMaxHeightModal(
-                element.clientHeight
-                - 32 // title
-                - 25 // divider
-                - 48 // button - ok
-                - 32 // padding - modal
-              );
-            }
-
           break;
         }
       
@@ -143,7 +129,7 @@ function ServicesMonth() {
       } 
     }
 
-    if (e.data.mfeId === 'service__2') {
+    if (e.data.mfeCode === '@ffit/servicos-mes') {
       switch (e.data?.event) {
         case 'updateSize':
           setHeight(e.data.info.height);
@@ -176,7 +162,6 @@ function ServicesMonth() {
   /* Parameters used to load mfe servicesOfTheMonth */
   const queryStringObj = {
     'ffit-key': 'i8Nc7C1gYSMz1OgTU9X1DC6tOholr6e7',
-    id: 'service__1',
     graphTitle: 'Serviços do Mês',
     hideDetail: 'true',
     hideStatementsButton: 'true',
@@ -190,7 +175,6 @@ function ServicesMonth() {
   const queryStringModalObj = {
     ...queryStringObj,
     hideDetail: 'false',
-    id: 'service__2',
   };
 
   const queryStringModal = new URLSearchParams(queryStringModalObj).toString();
@@ -219,7 +203,7 @@ function ServicesMonth() {
             ref={mfeModalRef}
             src={`https://mfe.ffit.com.br/mfe/servicos-mes?${queryStringModal}`}
             title="Serviços do Mês"
-            style={{ width: '100%', height, maxHeight: maxHeightModal }}
+            style={{ width: '100%', height }}
             frameBorder="0"
           />
           <div style={styles.buttonHolder}>
@@ -277,7 +261,7 @@ const styles: {
 }
 
 const style = {
-  position: 'absolute' as 'absolute',
+  position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -287,6 +271,8 @@ const style = {
   boxShadow: 24,
   p: 2,
   borderRadius: 1,
+  display: 'flex',
+  flexDirection: 'column',
 };
 
 export { ServicesMonth };
