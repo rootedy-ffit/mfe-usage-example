@@ -49,6 +49,7 @@ const styles: {
     gap: 24,
     flex: 1,
     padding: 24,
+    overflowY: 'auto',
   },
   mfeContainer: {
     display: 'flex',

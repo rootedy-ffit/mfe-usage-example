@@ -102,21 +102,13 @@ function AssistanceCostPercentageChart() {
   const queryString = new URLSearchParams(queryStringObj).toString();
 
   return (
-    <div>
-      <iframe
-        ref={mfeRef}
-        src={`https://mfe.ffit.com.br/mfe/custos-assistenciais?${queryString}`}
-        title="Custos Assistenciais"
-        style={{ width: '100%', height, marginBottom: 20 }}
-        frameBorder="0"
-      />
-      <DatePickerModal
-        // When you close the modal by clicking save, the new date is reloaded
-        onLoadOnClose={async () => {
-          const newDate = inputValue?.set('D', 1).format('DD/MM/yyyy');
-          getDataMock(newDate, true);
-        }}
-      />
+    <div style={{
+      background:'lightgray',
+      width: '100%',
+      height: '100%',
+      marginBottom: 24,
+    }}>
+
     </div>
   );
 }

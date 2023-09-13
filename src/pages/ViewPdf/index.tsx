@@ -28,12 +28,7 @@ function ViewPdf() {
         </div>
         <div style={styles.mfeContainer}>
           <div style={styles.mfeContent}>
-            <iframe
-              src={`https://mfe.ffit.com.br/mfe/visualizacao-de-pdf?${queryString}`}
-              title="Visualizador de PDF"
-              style={{ width: '100%', height: '100%' }}
-              frameBorder="0"
-            />
+
           </div>
         </div>
       </div>
@@ -70,6 +65,7 @@ const styles: {
     justifyContent: 'center',
     alignItems: 'flex-start',
     gap: 24,
+    background: 'lightgray',
   },
 }
 

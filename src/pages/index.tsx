@@ -8,7 +8,6 @@ import {
 import Login from './Login';
 import Home from './Home';
 import ViewPdf from './ViewPdf';
-import Forms from './Forms';
 
 const router = createBrowserRouter([
   {
@@ -22,10 +21,6 @@ const router = createBrowserRouter([
   {
     path: "/pdf/:id",
     element: <ViewPdf />,
-  },
-  {
-    path: "/forms",
-    element: <Forms />,
   },
 ]); 
 

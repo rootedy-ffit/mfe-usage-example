@@ -57,9 +57,9 @@ function SideMenu() {
               alt="Formulário Icon"
             />
           </div>
-          <Link to={'/forms'} style={styles.menuText}>
+          <span style={styles.menuText}>
             Formulários
-          </Link>
+          </span>
         </div>
         <div style={styles.menuHolder}>
           <div style={styles.imgHolder}>  
